@@ -7,16 +7,17 @@
 typedef struct {
   int capacity;
   int element_count;
-  uint32_t* ints;
-} IntegerList;
+  unsigned char* byte;
+} ByteList;
 
 
-void init_list(IntegerList* array);
+void init_list(ByteList* array);
 void* reallocate(void* memory, size_t old_size, size_t requested_bytes);
-void add_items(IntegerList* array, uint32_t element);
-void free_memory(IntegerList* array);
-void empty_list(IntegerList* array);
-void print_list(IntegerList* array);
+void add_items(ByteList* array, void* element, size_t len);
+void free_memory(ByteList* array);
+void empty_list(ByteList* array);
+void print_list_as_int(ByteList* array);
+void print_list_as_float(ByteList* array);
 
 #endif // !dynarray_h
 
